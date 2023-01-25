@@ -1,1 +1,1 @@
-In java string, contains() takes a string(charsequence), while indexOf() takes a char
+​
