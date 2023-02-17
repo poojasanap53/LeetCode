@@ -2,20 +2,13 @@ class Solution {
     public int[] createTargetArray(int[] nums, int[] index) {
         int[] target = new int[nums.length];
         
+        ArrayList<Integer> ls = new ArrayList<>();
         for(int i = 0; i < nums.length; i++){
-            target[i] = -1;
+            ls.add(index[i], nums[i]);
         }
-        
-        for(int i = 0; i < nums.length; i++){
-            if(target[index[i]] == -1 ){
-                target[index[i]] = nums[i];
-            }
-            else{
-                for(int j = nums.length-1; j > index[i]; j--){
-                    target[j] = target[j-1];
-                }
-                target[index[i]] = nums[i];
-            }
+       
+        for(int i = 0; i <ls.size(); i++){
+            target[i] = ls.get(i);
         }
         
         return target;
